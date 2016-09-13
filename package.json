@@ -1,6 +1,6 @@
 {
   "name": "morph-js",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Transform JS object literals using schema for output purposes such as database result to api output.",
   "main": "dist/index.js",
   "scripts": {
