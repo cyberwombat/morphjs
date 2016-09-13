@@ -2,6 +2,9 @@
 
 Transform JS object literals using schema for output purposes such as database result to api output.
 
+### Install
+
+    npm i morphjs
 
 ### Example
 
