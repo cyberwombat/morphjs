@@ -1,0 +1,13 @@
+.DS_Store
+*.log
+npm-debug.log*
+pids
+*.pid
+*.seed
+.npm
+node_modules
+test
+src
+logs
+data
+cli

@@ -1,0 +1,11 @@
+.DS_Store
+*.log
+npm-debug.log*
+pids
+*.pid
+*.seed
+.npm
+node_modules
+logs
+data
+cli
