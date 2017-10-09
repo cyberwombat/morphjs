@@ -68,7 +68,7 @@ Values prefixed with `@` are used to traverse the input object.
 
 Ex:
 
-`name: @recipient.name.first` 
+    name: @recipient.name.first
 
 will look for the name field in:
 
