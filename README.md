@@ -1,6 +1,6 @@
 # Morph
 
-Transform JS object literals using schema for output purposes such as database result to api output.
+MorphJS transforms object literals into different structures/formats using a simple schema.
 
 ### Install
 
