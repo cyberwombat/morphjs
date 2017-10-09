@@ -33,7 +33,7 @@ Transformation schema:
       id: '@_id',
       company: 'My company',
       email: '@recipient.email',
-      name: function(doc) {
+      name: (doc) => {
         return doc.recipient.first + ' ' +  doc.recipient.last
       },
       items: '@items',
@@ -61,12 +61,66 @@ Output:
       count: 2
     }    
 
+### Rules
 
-Basically the value parameter is a string - if it starts with '@' it will look for that value in the fields. If '@' is ommitted then it will just return a string as is.
+#### Path reference
+Values prefixed with `@` are used to traverse the input object. 
 
-One can also pass a function which is given then entire original collection/document and the function can return whatever is needed to be inserted in that place.
+Ex:
 
-We can also prepend with '#' which will return the count of that field.
+`name: @recipient.name.first` 
+
+will look for the name field in:
+
+````
+{
+    recipient: {
+        name: {
+            first: 'Sponge'
+        }
+    }
+}
+````
+
+#### Strings
+A quoted string will be used as is. 
+Ex: 
+    
+    version: '1.0'
+
+#### Counts
+Array lengths count can be obtained by prefixing value with `@`.
+
+Ex:
+
+    total: '@items'
+
+#### Functions
+
+If more functionality is necessary you can also use a function. This function is given the input document as a parameter.
+
+Ex:
+
+    name: doc => doc.recipient.first + ' ' +  doc.recipient.last
+
+#### Buffer, Dates and Mongo ObjectID
+
+If a Buffer or Date instance or an Mongo ObjectID is provided it will be coerced into a string. 
+
+Ex:
+
+````
+// Input
+_id: new objectID('28d64ae8122ab883bbc167ef'),
+
+// Schema
+id: _id
+
+// Output
+id: '28d64ae8122ab883bbc167ef'
+````
+
+
 
 
 
