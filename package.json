@@ -1,6 +1,6 @@
 {
   "name": "morphjs",
-  "version": "0.0.4",
+  "version": "0.1.0",
   "description": "MorphJS transforms object literals into another structure based on provided schema.",
   "main": "lib/index.js",
   "scripts": {
